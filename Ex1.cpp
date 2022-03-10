@@ -1,4 +1,3 @@
-//FRACTION PROGRAM
 #include <iostream>
 
 using namespace std;
@@ -94,8 +93,8 @@ int main()
 	int a,b;
 	Fraction f1(4,2);
 	Fraction f2(5,2);
-	cout << f1.Sum(f2).getNumerator() << "/" << f1.Sum(f2).getDenominator() << endl;
-	cout << f1.Difference(f2).getNumerator() << "/" << f1.Difference(f2).getDenominator() << endl;
-	cout << f1.Product(f2).getNumerator() << "/" << f1.Product(f2).getDenominator() << endl;
-	cout << f1.Division(f2).getNumerator() << "/" << f1.Division(f2).getDenominator() << endl;
+	cout << "Sum: " << f1.Sum(f2).getNumerator() << "/" << f1.Sum(f2).getDenominator() << endl;
+	cout << "Difference: " << f1.Difference(f2).getNumerator() << "/" << f1.Difference(f2).getDenominator() << endl;
+	cout << "Product: " << f1.Product(f2).getNumerator() << "/" << f1.Product(f2).getDenominator() << endl;
+	cout << "Division: " << f1.Division(f2).getNumerator() << "/" << f1.Division(f2).getDenominator() << endl;
 }
