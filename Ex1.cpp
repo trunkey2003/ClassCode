@@ -25,8 +25,8 @@ public:
         numerator = n;
         if (d == 0)
         {
-            cout << "ERROR: ATTEMPTING TO DIVIDE BY ZERO" << endl;
-            exit(0); // will terminate the program if division by 0 is attempted
+            cout << "Please put the validated denominator" << endl;
+            exit(0);
         }
         else
             denominator = d;
