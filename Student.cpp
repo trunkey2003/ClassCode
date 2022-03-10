@@ -50,7 +50,7 @@ void outputDate(Student s)
 {
 	cout << endl;
     cout << "Student : " << s.getFullName() << "\nMath Point : " << s.getMathPoint() << "\nLiterature Point : " << s.getLiteraturePoint();
-    cout << "\nAverage point : " << s.getAveragePoint();
+    cout << "\nAverage Point : " << s.getAveragePoint();
 }
 
 int main()
