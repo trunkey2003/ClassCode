@@ -1,4 +1,7 @@
 #pragma once 
+#include<string>
+
+using namespace std;
 
 class Candidate{
 	private:
@@ -10,14 +13,13 @@ class Candidate{
 		double math;
 		double literature;
 		double english;
+		
+	public:
+		void input();
+		
+		void output();
+		
 		double sum(){
 			return math + literature + english;
 		}
-	public:
-		void input(){
-			
-		};
-		
-		void output(){
-		};
 };
