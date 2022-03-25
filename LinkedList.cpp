@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 template <typename Type>
 struct Node{
 	Type data;
@@ -33,10 +37,28 @@ struct LinkedList{
 		length = 0;
 	}
 	
-	void push(Type data){
+	void push_back(Type data){
+		if (data == 0) return;
+		Node<Type>* temp = new Node<Type>(data);
+		Node<Type>* p;
+		if (head == NULL){
+			head = temp;
+		} else {
+			p = head;
+			while (p->next != NULL){
+				p = p->next;
+			}
+			p->next = temp;
+		}
+		length++;
+	}
+
+	
+	void push_front(Type data){
+		if (data == 0) return;
 		Node<Type>* temp = new Node<Type>(data);
 		temp->next = head;
-		head = temp;
-		length++;
+        head = temp;
+        length++;
 	}
 };
