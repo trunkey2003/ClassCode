@@ -1,4 +1,6 @@
 #include <iostream>
+#include <math.h>
+#include <string>
 
 using namespace std;
 
@@ -50,51 +52,59 @@ public:
 
     Fraction greatestFraction(Fraction a, Fraction b)
     {
-        double aDouble = a.getNumerator() / a.getDenominator();
-        double bDouble = b.getNumerator() / b.getDenominator();
+        double aDouble = a.numerator / a.denominator;
+        double bDouble = b.numerator / b.denominator;
         return (aDouble > bDouble)? a : b;
     }
     
     Fraction Sum(Fraction otherFraction)
     {
-        int n = numerator*otherFraction.getDenominator()+otherFraction.getNumerator()*denominator;
-        int d = denominator*otherFraction.getDenominator();
+        int n = numerator*otherFraction.denominator+otherFraction.numerator*denominator;
+        int d = denominator*otherFraction.denominator;
         return Fraction(n/gcd(n,d),d/gcd(n,d));
     }
     
     Fraction Difference(Fraction otherFraction)
     {
-        int n = numerator*otherFraction.getDenominator()-otherFraction.numerator*denominator;
-        int d = denominator*otherFraction.getDenominator();
+        int n = numerator*otherFraction.denominator-otherFraction.numerator*denominator;
+        int d = denominator*otherFraction.denominator;
         return Fraction(n/gcd(n,d),d/gcd(n,d));
     }
     
     Fraction Product(Fraction otherFraction)
     {
-        int n = numerator*otherFraction.getNumerator();
-        int d = denominator*otherFraction.getDenominator();
+        int n = numerator*otherFraction.numerator;
+        int d = denominator*otherFraction.denominator;
         return Fraction(n/gcd(n,d),d/gcd(n,d));
     }
     
     Fraction Division(Fraction otherFraction)
     {
-        int n = numerator*otherFraction.getDenominator();
-        int d = denominator*otherFraction.getNumerator();
+        int n = numerator*otherFraction.denominator;
+        int d = denominator*otherFraction.numerator;
         return Fraction(n/gcd(n,d),d/gcd(n,d));
     }
     
-    void displayFraction(){
-    	cout << numerator << "/" << denominator;
+    string displayFraction(){
+        if (denominator < 0) {
+            denominator = -denominator;
+            return ("-" + (to_string(numerator) + "/" +  to_string(denominator)));
+        }
+    	return (to_string(numerator) + "/" +  to_string(denominator));
 	}
 };
+
+void Output(Fraction f1, Fraction f2){
+    cout << "Sum:  " << f1.Sum(f2).displayFraction() << endl;
+    cout << "Difference:  " << f1.Difference(f2).displayFraction() << endl;
+    cout << "Product:  " << f1.Product(f2).displayFraction() << endl;
+    cout << "Division:  " << f1.Division(f2).displayFraction() << endl;
+}
 
 int main()
 {	
 	int a,b;
 	Fraction f1(4,2);
 	Fraction f2(5,2);
-	cout << "Sum: " << f1.Sum(f2).getNumerator() << "/" << f1.Sum(f2).getDenominator() << endl;
-	cout << "Difference: " << f1.Difference(f2).getNumerator() << "/" << f1.Difference(f2).getDenominator() << endl;
-	cout << "Product: " << f1.Product(f2).getNumerator() << "/" << f1.Product(f2).getDenominator() << endl;
-	cout << "Division: " << f1.Division(f2).getNumerator() << "/" << f1.Division(f2).getDenominator() << endl;
+    	Output(f1, f2);
 }
