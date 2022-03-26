@@ -6,7 +6,7 @@ using namespace std;
 class Candidate{
 	private:
 		string name;
-		int id;
+		string id;
 		int day;
 		int month;
 		int year;
