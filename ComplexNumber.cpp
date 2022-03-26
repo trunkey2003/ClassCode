@@ -5,10 +5,13 @@
 using namespace std;
 
 ComplexNumber Input(){
-	cout << "Input complex number : ";
+	cout << "Input complex number: " << endl;
 	double realPart, imaginaryPart;
+	cout << "Real part: ";
 	cin >> realPart;
+	cout << "Imaginary part: ";
 	cin >> imaginaryPart;
+	cout << endl;
 	return ComplexNumber(realPart, imaginaryPart);
 }
 
