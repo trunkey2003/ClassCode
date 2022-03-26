@@ -17,7 +17,7 @@ string Sign(int a){
 }
 
 void Output(ComplexNumber a, ComplexNumber b){
-	cout << "Sum a + b: " << a.Sum(b).realPart << 
+	cout << "Sum a + b: " << a.Sum(b).getRealPart() << 
 	Sign(a.Sum(b).getImaginaryPart()) << a.Sum(b).getImaginaryPart() << "i" << endl;
 	cout << "Different a + b: " << a.Different(b).getRealPart() << 
 	Sign(a.Different(b).getImaginaryPart()) << a.Different(b).getImaginaryPart() << "i" << endl;
