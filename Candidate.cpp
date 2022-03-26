@@ -7,7 +7,7 @@ void Candidate::input()
 {
 	cout << "id: ";
 	cin >> id;
-    cout << "name: ";
+    cout << "name(without space): ";
 	cin >> name;
     cout <<"dd mm yyyy: ";
 	cin >> day >> month >> year;
@@ -25,19 +25,25 @@ void Candidate::output(){
 	cout << sum() << "\t";
 	cout << endl;
 }
-
-int main(){
-	Candidate *a = new Candidate[10];
+void input(Candidate* a, int& n){
 	cout << "Amount of Candidate : ";
-	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++){
 		a[i].input();
 	}
-	
+}
+
+void output(Candidate* a, int n){
 	cout << "id\t" <<"name\t" << "date of birth\t" << "Math\t" << "Lit\t" << "Eng\t" << "Sum\t" << endl;
 	
 	for (int i = 0; i < n; i ++){
 		if (a[i].sum() > 15) a[i].output();
 	}
+}
+
+int main(){
+	int n;
+	Candidate *a = new Candidate[10];
+	input(a,n);
+	output(a,n);
 }
