@@ -36,7 +36,6 @@ struct LinkedList{
 		length = 0;
         head = NULL;
         tail = NULL;
-        cout << "Hello";
 	}
 	
 	void push_front(int data){
