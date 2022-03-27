@@ -9,6 +9,7 @@ struct Node{
 	}
 	Node(int data){
 		this->data = data;
+        this->next = NULL;
 	}
 };
 
@@ -26,8 +27,8 @@ struct LinkedList{
 	void push_front(int data){
 		if (data == 0) return;
 		if (head == NULL){
-            Node* temp = new Node(data);
-			head = temp;
+            Node* p = new Node(data);
+			head = p;
             tail = head;
 		} else {
             Node* p;
@@ -42,13 +43,11 @@ struct LinkedList{
 	void push_back(int data){
 		if (data == 0) return;
 		if (head == NULL){
-            Node* temp = new Node(data);
-			tail = temp;
+            Node* p = new Node(data);
+			tail = p;
             head = tail;
 		} else {
-            Node* p;
-			p->next = NULL;
-            p->data = data;
+            Node* p = new Node(data);
             tail->next = p;
             tail = p;
 		}
