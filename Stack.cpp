@@ -60,13 +60,11 @@ struct Stack
         Node<Type> *p = new Node<Type>(data);
         if (pHead == NULL)
         {
-            Node<Type> *p = new Node<Type>(data);
             pHead = p;
             pTail = pHead;
         }
         else
         {
-            Node<Type> *p = new Node<Type>(data);
             p->pNext = pHead;
             pHead = p;
         }
