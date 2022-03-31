@@ -21,12 +21,12 @@ struct Node{
 };
 
 template <typename Type>
-struct LinkedList{
+struct SinglyLinkedList{
 	int length;
 	Node<Type>* pHead;
     Node<Type>* pTail;
 	
-	LinkedList(){
+	SinglyLinkedList(){
 		pHead = NULL;
         pTail = NULL;
 		length = 0;
@@ -156,12 +156,12 @@ struct LinkedList{
 };
 
 template <typename Type>
-void Input(LinkedList<Type> l){
+void Input(SinglyLinkedList<Type> l){
 
 }
 
 template <typename Type>
-void Output(LinkedList<Type> l){
+void Output(SinglyLinkedList<Type> l){
     cout << "[";
     for (Node<Type>* iterator = l.pHead; iterator != NULL; iterator = iterator->pNext){
         cout << iterator->data;
