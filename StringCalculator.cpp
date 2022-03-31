@@ -1,3 +1,4 @@
+//+ - * /
 //input 1+2*3/4-5
 //output -2.5
 
@@ -64,7 +65,7 @@ int main()
     vector<string> v;
     cin >> s;
 
-    //even index elements store number in string - odd index elements store sign (+ - * /)
+    //number at even index - "+-*/" at odd index
     spilitSignAndNumber(s, v);
 
     double res = calculateVectorString(v);
