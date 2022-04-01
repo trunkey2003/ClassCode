@@ -177,6 +177,46 @@ struct SinglyLinkedList
         }
         markX->data = y;
     }
+
+    void swap(Node<Type>* p1, Node<Type>* p2)
+    {
+        Type temp = p1->data;
+        p1->data = p2->data;
+        p2->data = temp;
+    }
+
+    void swap(Node<Type>& n1, Node<Type>& n2)
+    {
+        Type temp = n1.data;
+        n1.data = n2.data;
+        n2.data = temp;
+    }
+
+    void swap(int x, int y){
+        if (x > length - 1 || y > length - 1) return;
+        int max = (x > y)? x : y;
+        Node<Type> *p(pHead);
+        Node<Type> *px(NULL);
+        Node<Type> *py(NULL);
+        int i = 0;
+        while (p)
+        {
+            if (x == i) {
+              px = p;  
+            }
+
+            if (y == i){
+              py = p;  
+            }
+
+            if (max == i) break;
+
+            i++;
+            p = p->pNext;
+        }
+
+        swap(px, py);
+    }
 };
 
 template <typename Type>
