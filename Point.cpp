@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+class Point{
+private:    
+    int x;
+    int y;
+public: 
+    void input(){
+        cout << "x: "; cin >> x;
+        cout << "y: "; cin >> y;
+    }
+
+    void output(){
+        cout << "Point: " << "(" << x << "," << y << ")";
+    }
+
+    int getX(){
+        return x;
+    }
+
+    int getY(){
+        return y;
+    }
+
+    void setX(int x){
+        this->x = x;
+    }
+
+    void setY(int y){
+        this->y = y;
+    }
+
+    void translate(int a, int b){
+        x = x + a;
+        y = y + b;
+    }
+};
