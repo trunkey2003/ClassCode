@@ -7,6 +7,15 @@ private:
     int x;
     int y;
 public: 
+    Point(){
+
+    }
+
+    Point(int x, int y){
+        this->x = x;
+        this->y = y;
+    }
+
     void input(){
         cout << "x: "; cin >> x;
         cout << "y: "; cin >> y;
