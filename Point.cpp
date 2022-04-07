@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 using namespace std;
@@ -22,7 +23,7 @@ public:
     }
 
     void output(){
-        cout << "Point: " << "(" << x << "," << y << ")";
+        cout << "Point: " << "(" << x << "," << y << ")" << endl;
     }
 
     int getX(){
