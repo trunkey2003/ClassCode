@@ -36,10 +36,7 @@ public:
         cout << "Date of birth: " << DOB << endl;
     };
 
-    virtual int getSalary()
-    {
-        return 0;
-    };
+    virtual int getSalary() = 0;
 };
 
 class FactoryWorker : public Employee
@@ -196,7 +193,7 @@ int main()
     Employee *employees[1000];
 
     cout << "======================================Employee Management Program======================================\n";
-    cout << "Amount of employees: ";
+    cout << "Amount of employees: " << endl;
     cin >> n;
 
     inputEmployees(employees, n);
