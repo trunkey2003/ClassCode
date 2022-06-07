@@ -6,8 +6,8 @@ template <typename Type>
 struct Node
 {
     Type data;
-    Node *left;
-    Node *right;
+    Node<Type> *left;
+    Node<Type> *right;
     Node(){};
     Node(Type data)
     {
