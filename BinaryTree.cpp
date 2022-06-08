@@ -28,6 +28,15 @@ void CreateTree(Tree &root)
     root = NULL;
 };
 
+void DestroyTree(Tree &root)
+{
+    if (root)
+    {
+        DestroyTree(root->left);
+        DestroyTree(root->right);
+        delete root;
+    }
+};
 
 void AddNode(Tree &root, Node *node)
 {
